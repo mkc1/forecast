@@ -17,6 +17,7 @@ function findCoordinates(){
         var jsonResponse = JSON.parse(xhr.responseText);
         var latitude = jsonResponse.results[0].geometry.location.lat;
         var longitude = jsonResponse.results[0].geometry.location.lng
+        console.log(latitude, longitude)
         makeCorsRequest()
       } else {
        
