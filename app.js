@@ -20,7 +20,7 @@ function findCoordinates(){
 
         function foo(data) 
         {
-          console.log('hellooo')
+          console.log('hello?')
           console.log(data)
         }
 
