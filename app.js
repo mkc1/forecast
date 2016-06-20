@@ -93,6 +93,7 @@ function findCoordinates(){
   function weekly(myData) {
     var weeklyForecast = ['<caption>Weekly Forecast</caption>', '<tr><td>Day</td><td>Temp (hi/low)</td><td>Feels like (hi/low)</td><td>Summary</td></tr>'];
     for (var i = 0; i < 7; i++) {
+      console.log('here', myData.daily.data[i].time)
       var date = new Date(myData.daily.data[i].time*1000);
       var newLine = "<tr><td>" + date.toString().substring(0, 10) + "</td>";
       newLine += "<td>" + myData.daily.data[i].temperatureMax  + " / " +  myData.daily.data[i].temperatureMin + "</td>";
