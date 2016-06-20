@@ -77,11 +77,10 @@ function makeCorsRequest() {
 
 }
 
-  function foo(data) 
-    {
+  function foo(data) {
       console.log('hellooo')
       console.log(data)
-    }
+  }
 
     var script = document.createElement('script');
     script.src = 'https://api.forecast.io/forecast/6942987057d91c10a7960fdcf9b0d96e/37.8267,-122.423?callback=foo'
