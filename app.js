@@ -18,10 +18,9 @@ function findCoordinates(){
         var latitude = jsonResponse.results[0].geometry.location.lat;
         var longitude = jsonResponse.results[0].geometry.location.lng;
         var script = document.createElement('script');
-        script.src = 'https://api.forecast.io/forecast/6942987057d91c10a7960fdcf9b0d96e/' + latitude + ',' + longitude +' ?callback=foo'
+        script.src = 'https://api.forecast.io/forecast/6942987057d91c10a7960fdcf9b0d96e/' + latitude + ',' + longitude +' ?callback=foo()'
 
         document.head.appendChild(script);
-        foo();
       } else {
        
       console.log('Error: ' + xhr.status);
