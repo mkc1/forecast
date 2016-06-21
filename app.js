@@ -36,10 +36,10 @@ function getForecast(lat, lng) {
 }
 
 function createForecastTables(data) {
-  document.getElementById('week').style.backgroundColor = 'orange';
-  document.getElementById('today').style.backgroundColor = 'orange';
   weekly(data);
   hourly(data);
+  document.getElementById('week').style.backgroundColor = '#e6ecff';
+  document.getElementById('today').style.backgroundColor = '#e6ecff';
 }
 
 function weekly(myData) {
