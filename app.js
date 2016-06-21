@@ -11,7 +11,6 @@ function findCoordinates(){
     var DONE = 4;
     if (xhr.readyState === DONE) {
       if (xhr.status === 200) {
-        console.log(jsonResponse);
         var jsonResponse = JSON.parse(xhr.responseText);
         console.log(jsonResponse);
         var latitude = jsonResponse.results[0].geometry.location.lat;
