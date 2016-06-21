@@ -27,6 +27,7 @@ table {
   width: 70%;
   margin-left:15%; 
   margin-right:15%;
+  padding: 20px;
 }
 tr, td {
   width: 25%;
