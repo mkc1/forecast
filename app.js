@@ -58,8 +58,8 @@ function hourly(myData) {
     var date = new Date(myData.hourly.data[i].time*1000);
     var time = formatTime(date);
     var newLine = "<tr><td>" + time + "</td>";
-    // newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
-    // newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
+    newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
+    newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
     // newLine += "<td>" + myData.hourly.data[i].summary + "</td></tr>";
     // console.log(myData.hourlydaily.data[i].icon)
     // //newLine += "<img class='row' src='img/" + myData.daily.data[i].icon + ".svg></td></tr>";
