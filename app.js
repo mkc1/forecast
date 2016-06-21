@@ -13,7 +13,7 @@ function findCoordinates(){
       if (xhr.status === 200) {
         console.log(jsonResponse);
         var jsonResponse = JSON.parse(xhr.responseText);
-        var city = jsonResponse()s
+        console.log(jsonResponse);
         var latitude = jsonResponse.results[0].geometry.location.lat;
         var longitude = jsonResponse.results[0].geometry.location.lng;
         var script = document.createElement('script');
@@ -41,7 +41,8 @@ function weekly(myData) {
     var newLine = "<tr><td>" + date.toString().substring(0, 10) + "</td>";
     newLine += "<td>" + Math.round(myData.daily.data[i].temperatureMax)  + " / " +  Math.round(myData.daily.data[i].temperatureMin) + "</td>";
     newLine += "<td>" + Math.round(myData.daily.data[i].apparentTemperatureMax) + " / " + Math.round(myData.daily.data[i].apparentTemperatureMin) + "</td>";
-    newLine += "<td>" + myData.daily.data[i].summary + "</td></tr>";
+    newLine += "<td>" + myData.daily.data[i].summary;
+    newLine += "<img class='row' src='img/" + myData.daily.data[i].icon + ".svg>";
     weeklyForecast.push(newLine);
   }
   var HTMLstring = weeklyForecast.join('')
