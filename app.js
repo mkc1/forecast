@@ -60,13 +60,13 @@ function hourly(myData) {
     console.log('date', date);
     var time = formatTime(date);
     console.log('time', time);
-    var newLine = "<tr><td>" + time + "</td>";
-    newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
-    newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
-    newLine += "<td>" + myData.hourly.data[i].summary + "</td></tr>";
-    console.log(myData.hourlydaily.data[i].icon)
-    //newLine += "<img class='row' src='img/" + myData.daily.data[i].icon + ".svg></td></tr>";
-    hourlyForecast.push(newLine);
+    // var newLine = "<tr><td>" + time + "</td>";
+    // newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
+    // newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
+    // newLine += "<td>" + myData.hourly.data[i].summary + "</td></tr>";
+    // console.log(myData.hourlydaily.data[i].icon)
+    // //newLine += "<img class='row' src='img/" + myData.daily.data[i].icon + ".svg></td></tr>";
+    // hourlyForecast.push(newLine);
   }
   var HTMLstring = hourlyForecast.join('')
   document.getElementById('today').innerHTML = HTMLstring;
