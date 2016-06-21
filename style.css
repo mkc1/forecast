@@ -43,16 +43,10 @@ caption {
 th {
   font-size: 18px;
 }
-/*tr, td {
+tr, td {
   height: 25px;
   width: 25%;
   text-align: center;
-}*/
-td, th .summary {
-  width: 34%;
-}
-td, th .other {
-  width: 22%;
 }
 tr:nth-child(even) {
   background-color: #ccd9ff;
