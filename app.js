@@ -58,8 +58,9 @@ function hourly(myData) {
     var newLine = "<tr><td>" + time + "</td>";
     newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
     newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
-    newLine += "<td>" + myData.hourly.data[i].summary;
-    newLine += "<img class='row' src='img/" + myData.daily.data[i].icon + ".svg></td></tr>";
+    newLine += "<td>" + myData.hourly.data[i].summary += "</td></tr>";
+    console.log(myData.daily.data[i].icon)
+    //newLine += "<img class='row' src='img/" + myData.daily.data[i].icon + ".svg></td></tr>";
     hourlyForecast.push(newLine);
   }
   var HTMLstring = hourlyForecast.join('')
