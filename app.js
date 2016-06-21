@@ -61,7 +61,7 @@ function hourly(myData) {
     newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
     newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
     newLine += "<td>" + myData.hourly.data[i].summary;
-    newLine += '<img class="row" src="img/' + myData.hourly.data[i].icon + '.svg></td></tr>';
+    newLine += '<img class="row" src="img/' + myData.hourly.data[i].icon + '.svg"></td></tr>';
     console.log(newLine)
     hourlyForecast.push(newLine);
   }
