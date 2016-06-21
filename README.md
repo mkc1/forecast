@@ -1,1 +1,1 @@
-# project
+# browser-based forecast application
