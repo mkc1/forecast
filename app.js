@@ -3,11 +3,9 @@ function findCoordinates(){
   var key = 'AIzaSyDDFi8e76ybDrfKQpnop4cSYWfXlh_ouP4';
   var query = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '&key=' + key;
 
-
   var xhr = new XMLHttpRequest();
   xhr.open('GET', query);
   xhr.send(null);
-
 
   xhr.onreadystatechange = function() {
     var DONE = 4;
@@ -21,6 +19,7 @@ function findCoordinates(){
 
         document.head.appendChild(script);
         createForecastTables();
+
       } else {
         console.log('Error: ' + xhr.status);
       }
