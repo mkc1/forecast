@@ -13,7 +13,7 @@ function findCoordinates(){
       if (xhr.status === 200) {
         var jsonResponse = JSON.parse(xhr.responseText);
         var city = jsonResponse.results[0].formated_address;
-        console.log(city)
+        console.log(city);
         var latitude = jsonResponse.results[0].geometry.location.lat;
         var longitude = jsonResponse.results[0].geometry.location.lng;
         var script = document.createElement('script');
@@ -30,7 +30,7 @@ function findCoordinates(){
 }
 
 function createForecastTables(data) {
-  weekly(data);
+  //weekly(data);
   hourly(data);
 }
 
