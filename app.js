@@ -31,7 +31,7 @@ function findCoordinates(){
 }
 
 function createForecastTables(data) {
-  //weekly(data);
+  weekly(data);
   hourly(data);
 }
 
@@ -41,19 +41,18 @@ function weekly(myData) {
     var date = new Date(myData.daily.data[i].time*1000);
     var newLine = "<tr><td>" + date.toString().substring(0, 10) + "</td>";
     newLine += "<td>" + Math.round(myData.daily.data[i].temperatureMax)  + " / " +  Math.round(myData.daily.data[i].temperatureMin) + "</td>";
-    newLine += "<td>" + Math.round(myData.daily.data[i].apparentTemperatureMax) + " / " + Math.round(myData.daily.data[i].apparentTemperatureMin) + "</td>";
-    newLine += "<td>" + myData.daily.data[i].summary;
-    newLine += "<img class='row' src='img/" + myData.daily.data[i].icon + ".svg></td></tr>";
+    newLine += "<td>" + Math.round(myData.daily.data[i].apparentTemperatureMax) + " / " + Math.round(myData.daily.data[i].apparentTemperatureMin) + "</td></tr>";
+    // newLine += "<td>" + myData.daily.data[i].summary;
+    // newLine += '<img class="row" src="img/' + myData.daily.data[i].icon + '.svg"></td></tr>';
     console.log(newLine)
     weeklyForecast.push(newLine);
   }
   var HTMLstring = weeklyForecast.join('')
-  console.log(HTMLstring)
   document.getElementById('week').innerHTML = HTMLstring;
 }
 
 function hourly(myData) {
-  var hourlyForecast = ['<caption>Next 12 Hours</caption>', '<tr><td>Time</td><td>Temp</td><td>Feels like</td><td>Summary</td></tr>'];
+  var hourlyForecast = ['<caption>Next 12 Hours</caption>', '<tr><th>Time</th><th>Temp</th><th>Feels like</th><th>Summary</th></tr>'];
   for (var i = 0; i < 12; i++) {
     var date = new Date(myData.hourly.data[i].time*1000);
     var time = formatTime(date);
@@ -62,7 +61,6 @@ function hourly(myData) {
     newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
     newLine += "<td>" + myData.hourly.data[i].summary;
     newLine += '<img class="row" src="img/' + myData.hourly.data[i].icon + '.svg"></td></tr>';
-    console.log(newLine)
     hourlyForecast.push(newLine);
   }
   var HTMLstring = hourlyForecast.join('')
