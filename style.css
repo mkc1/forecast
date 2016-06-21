@@ -48,6 +48,12 @@ tr, td {
   width: 25%;
   text-align: center;
 }
+td, th .summary {
+  width: 34%;
+}
+td, th .other {
+  width: 22%;
+}
 tr:nth-child(even) {
   background-color: #ccd9ff;
   opacity: 15%;

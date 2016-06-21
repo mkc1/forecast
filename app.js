@@ -32,7 +32,6 @@ function getForecast(lat, lng) {
   script.src = 'https://api.forecast.io/forecast/' + forecastKey + '/' + lat + ',' + lng + '?callback=createForecastTables';
 
   document.head.appendChild(script);
-  //createForecastTables();
 }
 
 function createForecastTables(data) {
@@ -43,13 +42,13 @@ function createForecastTables(data) {
 }
 
 function weekly(myData) {
-  var weeklyForecast = ['<caption>Weekly Forecast</caption>', '<tr><th>Day</th><th>Temp (hi/low) <img class="header" src="img/f.svg"></th><th>Feels like (hi/low) <img class="header" src="img/f.svg"></th><th>Summary</th></tr>'];
+  var weeklyForecast = ['<caption>Weekly Forecast</caption>', '<tr><th class="other">Day</th><th class="other">Temp (hi/low) <img class="header" src="img/f.svg"></th><th class="other">Feels like (hi/low) <img class="header" src="img/f.svg"></th><th class="weekly">Summary</th></tr>'];
   for (var i = 0; i < 7; i++) {
     var date = new Date(myData.daily.data[i].time*1000);
-    var newLine = "<tr><td>" + date.toString().substring(0, 10) + "</td>";
-    newLine += "<td>" + Math.round(myData.daily.data[i].temperatureMax)  + " / " +  Math.round(myData.daily.data[i].temperatureMin) + "</td>";
-    newLine += "<td>" + Math.round(myData.daily.data[i].apparentTemperatureMax) + " / " + Math.round(myData.daily.data[i].apparentTemperatureMin) + "</td>";
-    newLine += "<td>" + myData.daily.data[i].summary;
+    var newLine = '<tr><td class="other">' + date.toString().substring(0, 10) + "</td>";
+    newLine += '<td class="other">' + Math.round(myData.daily.data[i].temperatureMax)  + " / " +  Math.round(myData.daily.data[i].temperatureMin) + "</td>";
+    newLine += '<td class="other">' + Math.round(myData.daily.data[i].apparentTemperatureMax) + " / " + Math.round(myData.daily.data[i].apparentTemperatureMin) + "</td>";
+    newLine += '<td class="summary">' + myData.daily.data[i].summary;
     newLine += '<img class="row" src="img/' + myData.daily.data[i].icon + '.svg"></td></tr>';
     weeklyForecast.push(newLine);
   }
