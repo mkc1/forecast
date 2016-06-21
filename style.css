@@ -24,9 +24,9 @@ button:hover  {
   color:#207cca;
 }
 table {
-  width: 75%;
-  margin-left:auto; 
-  margin-right:auto;
+  width: 70%;
+  margin-left:15%; 
+  margin-right:15%;
 }
 tr, td {
   width: 25%;
