@@ -12,8 +12,7 @@ function findCoordinates(){
     if (xhr.readyState === DONE) {
       if (xhr.status === 200) {
         var jsonResponse = JSON.parse(xhr.responseText);
-        var city = jsonResponse.results[0].formated_address;
-        console.log(jsonResponse)
+        var city = jsonResponse.results[0].formatted_address;
         console.log(city);
         var latitude = jsonResponse.results[0].geometry.location.lat;
         var longitude = jsonResponse.results[0].geometry.location.lng;
@@ -56,9 +55,11 @@ function weekly(myData) {
 function hourly(myData) {
   var hourlyForecast = ['<caption>Next 12 Hours</caption>', '<tr><td>Time</td><td>Temp</td><td>Feels like</td><td>Summary</td></tr>'];
   for (var i = 0; i < 12; i++) {
+    console.log('timestamp', myData.hourly.data[i].time*1000)
     var date = new Date(myData.hourly.data[i].time*1000);
+    console.log('date', date);
     var time = formatTime(date);
-    console.log(time);
+    console.log('time', time);
     var newLine = "<tr><td>" + time + "</td>";
     newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
     newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
