@@ -13,14 +13,13 @@ function findCoordinates(){
       if (xhr.status === 200) {
         var jsonResponse = JSON.parse(xhr.responseText);
         var city = jsonResponse.results[0].formatted_address;
-        console.log(city);
         var latitude = jsonResponse.results[0].geometry.location.lat;
         var longitude = jsonResponse.results[0].geometry.location.lng;
-        console.log(latitude, longitude)
         var script = document.createElement('script');
         script.src = 'https://api.forecast.io/forecast/6942987057d91c10a7960fdcf9b0d96e/' + latitude + ',' + longitude + '?callback=createForecastTables'
 
         document.head.appendChild(script);
+        document.querySelectorAll('h1').textContent = city;
         createForecastTables();
 
       } else {
