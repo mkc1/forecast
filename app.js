@@ -32,7 +32,7 @@ function getForecast(lat, lng) {
   script.src = 'https://api.forecast.io/forecast/' + forecastKey + '/' + lat + ',' + lng + '?callback=createForecastTables';
 
   document.head.appendChild(script);
-  createForecastTables();
+  //createForecastTables();
 }
 
 function createForecastTables(data) {
