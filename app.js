@@ -15,12 +15,9 @@ function findCoordinates(){
         var city = jsonResponse.results[0].formatted_address;
         var latitude = jsonResponse.results[0].geometry.location.lat;
         var longitude = jsonResponse.results[0].geometry.location.lng;
-        var script = document.createElement('script');
-        script.src = 'https://api.forecast.io/forecast/6942987057d91c10a7960fdcf9b0d96e/' + latitude + ',' + longitude + '?callback=createForecastTables'
-
-        document.head.appendChild(script);
         document.getElementsByTagName('h1')[0].textContent = city;
-        createForecastTables();
+
+        getForecast(latitude, longitude);
 
       } else {
         console.log('Error: ' + xhr.status);
@@ -29,7 +26,18 @@ function findCoordinates(){
   }
 }
 
+function getForecast(lat, lng) {
+  var forecastKey = '6942987057d91c10a7960fdcf9b0d96e';
+  var script = document.createElement('script');
+  script.src = 'https://api.forecast.io/forecast/' + forecastKey + '/' + lat + ',' + lng + '?callback=createForecastTables';
+
+  document.head.appendChild(script);
+  createForecastTables();
+}
+
 function createForecastTables(data) {
+  document.getElementById('week').style.backgroundColor = 'orange';
+  document.getElementById('today').style.backgroundColor = 'orange';
   weekly(data);
   hourly(data);
 }
