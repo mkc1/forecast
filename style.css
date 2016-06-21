@@ -1,6 +1,9 @@
 body {
   color: #207cca;
-  font-family: helvetica;
+  font-family: 'Montserrat', sans-serif;
+}
+h1 {
+  text-align: center;
 }
 #zipLookup {
   width:500px;
@@ -24,12 +27,36 @@ button:hover  {
   color:#207cca;
 }
 table {
-  width: 70%;
-  margin-left:15%; 
-  margin-right:15%;
+  width: 70%; 
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
   padding: 20px;
+  background-color: #e6ecff;
+}
+caption {
+  font-size: 20px;
+  background-color: #e6ecff;
+  padding-top: 10px;
+  font-weight: bold;
+}
+th {
+  font-size: 18px;
 }
 tr, td {
+  height: 25px;
   width: 25%;
   text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #ccd9ff;
+  opacity: 15%;
+}
+img.header {
+  height: 25px;
+}
+img.row {
+  height: 20px;
+  padding-right: 15px;
+  float: right;
 }
