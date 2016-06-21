@@ -42,7 +42,7 @@ function createForecastTables(data) {
 }
 
 function weekly(myData) {
-  var weeklyForecast = ['<caption>Weekly Forecast</caption>', '<tr><th class="other">Day</th><th class="other">Temp (hi/low) <img class="header" src="img/f.svg"></th><th class="other">Feels like (hi/low) <img class="header" src="img/f.svg"></th><th class="weekly">Summary</th></tr>'];
+  var weeklyForecast = ['<caption>Weekly Forecast</caption>', '<tr><th class="other">Day</th><th class="other">Temp (hi/low) <img class="header" src="img/f.svg"></th><th class="other">Feels like (hi/low) <img class="header" src="img/f.svg"></th><th class="summary">Summary</th></tr>'];
   for (var i = 0; i < 7; i++) {
     var date = new Date(myData.daily.data[i].time*1000);
     var newLine = '<tr><td class="other">' + date.toString().substring(0, 10) + "</td>";
