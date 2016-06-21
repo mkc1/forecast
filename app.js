@@ -13,9 +13,11 @@ function findCoordinates(){
       if (xhr.status === 200) {
         var jsonResponse = JSON.parse(xhr.responseText);
         var city = jsonResponse.results[0].formated_address;
+        console.log(jsonResponse)
         console.log(city);
         var latitude = jsonResponse.results[0].geometry.location.lat;
         var longitude = jsonResponse.results[0].geometry.location.lng;
+        console.log(latitude, longitude)
         var script = document.createElement('script');
         script.src = 'https://api.forecast.io/forecast/6942987057d91c10a7960fdcf9b0d96e/' + latitude + ',' + longitude + '?callback=createForecastTables'
 
@@ -56,6 +58,7 @@ function hourly(myData) {
   for (var i = 0; i < 12; i++) {
     var date = new Date(myData.hourly.data[i].time*1000);
     var time = formatTime(date);
+    console.log(time);
     var newLine = "<tr><td>" + time + "</td>";
     newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
     newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
