@@ -19,7 +19,7 @@ function findCoordinates(){
         script.src = 'https://api.forecast.io/forecast/6942987057d91c10a7960fdcf9b0d96e/' + latitude + ',' + longitude + '?callback=createForecastTables'
 
         document.head.appendChild(script);
-        document.getElementsByTagName('h1').textContent = city;
+        document.getElementsByTagName('h1').innerHTML = city;
         createForecastTables();
 
       } else {
