@@ -41,9 +41,9 @@ function weekly(myData) {
     var date = new Date(myData.daily.data[i].time*1000);
     var newLine = "<tr><td>" + date.toString().substring(0, 10) + "</td>";
     newLine += "<td>" + Math.round(myData.daily.data[i].temperatureMax)  + " / " +  Math.round(myData.daily.data[i].temperatureMin) + "</td>";
-    newLine += "<td>" + Math.round(myData.daily.data[i].apparentTemperatureMax) + " / " + Math.round(myData.daily.data[i].apparentTemperatureMin) + "</td><";
+    newLine += "<td>" + Math.round(myData.daily.data[i].apparentTemperatureMax) + " / " + Math.round(myData.daily.data[i].apparentTemperatureMin) + "</td>";
     newLine += "<td>" + myData.daily.data[i].summary + "</td></tr>";
-    //newLine += '<img class="row" src="img/' + myData.daily.data[i].icon + '.svg"></td></tr>';
+    newLine += '<img class="row" src="img/' + myData.daily.data[i].icon + '.svg"></td></tr>';
     weeklyForecast.push(newLine);
   }
   var HTMLstring = weeklyForecast.join('')
