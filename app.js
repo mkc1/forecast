@@ -55,18 +55,16 @@ function weekly(myData) {
 function hourly(myData) {
   var hourlyForecast = ['<caption>Next 12 Hours</caption>', '<tr><td>Time</td><td>Temp</td><td>Feels like</td><td>Summary</td></tr>'];
   for (var i = 0; i < 12; i++) {
-    console.log('timestamp', myData.hourly.data[i].time*1000)
     var date = new Date(myData.hourly.data[i].time*1000);
-    console.log('date', date);
     var time = formatTime(date);
-    console.log('time', time);
-    // var newLine = "<tr><td>" + time + "</td>";
+    var newLine = "<tr><td>" + time + "</td>";
     // newLine += "<td>" + Math.round(myData.hourly.data[i].temperature) + "</td>";
     // newLine += "<td>" + Math.round(myData.hourly.data[i].apparentTemperature) + "</td>";
     // newLine += "<td>" + myData.hourly.data[i].summary + "</td></tr>";
     // console.log(myData.hourlydaily.data[i].icon)
     // //newLine += "<img class='row' src='img/" + myData.daily.data[i].icon + ".svg></td></tr>";
     // hourlyForecast.push(newLine);
+    console.log(newLine)
   }
   var HTMLstring = hourlyForecast.join('')
   document.getElementById('today').innerHTML = HTMLstring;
