@@ -1,6 +1,6 @@
 function findCoordinates(){
   var zipCode = document.getElementById('zip-input').value;
-  var key = 'AIzaSyDDFi8e76ybDrfKQpnop4cSYWfXlh_ouP4';
+  var key = 'xxxxxxxxxxxxxxxxxxxxx';
   var query = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '&key=' + key;
 
   var xhr = new XMLHttpRequest();
@@ -27,7 +27,7 @@ function findCoordinates(){
 }
 
 function getForecast(lat, lng) {
-  var forecastKey = '6942987057d91c10a7960fdcf9b0d96e';
+  var forecastKey = 'xxxxxxxxxxxxxxxxxxxx';
   var script = document.createElement('script');
   script.src = 'https://api.forecast.io/forecast/' + forecastKey + '/' + lat + ',' + lng + '?callback=createForecastTables';
 
